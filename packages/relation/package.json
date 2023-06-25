@@ -1,0 +1,23 @@
+{
+  "name": "@zs/relation",
+  "version": "1.0.0",
+  "description": "社交关系图",
+  "main": "index.js",
+  "module": "dist/relation.esm-bundler.js",
+  "types": "dist/relation.d.ts",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "keywords": [],
+  "author": "doubleming",
+  "license": "ISC",
+  "buildOptions": {
+    "name": "ZsRelation",
+    "formats": [
+      "esm-bundler",
+      "cjs",
+      "global"
+    ]
+  }
+}

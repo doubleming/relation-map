@@ -1,0 +1,18 @@
+{
+  "name": "@zs/relation-utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "module": "dist/relation-utils.esm-bundler.js",
+  "types": "dist/relation-utils.d.ts",
+  "keywords": [],
+  "author": "doubleming",
+  "license": "ISC",
+  "buildOptions": {
+    "name": "ZsRelationUtils",
+    "formats": [
+      "esm-bundler",
+      "cjs"
+    ]
+  }
+}

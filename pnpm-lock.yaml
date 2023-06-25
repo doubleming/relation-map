@@ -1,0 +1,17 @@
+lockfileVersion: '6.0'
+
+importers:
+
+  .:
+    devDependencies:
+      typescript:
+        specifier: ^5.1.3
+        version: 5.1.3
+
+packages:
+
+  /typescript@5.1.3:
+    resolution: {integrity: sha512-XH627E9vkeqhlZFQuL+UsyAXEnibT0kWR2FWONlr4sTjvxyJYnyefgrkyECLzM5NenmKzRAy2rR/OlYLA1HkZw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: true
