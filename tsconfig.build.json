@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true
+  },
+  "include": [
+    // "scripts/**/*",
+    "packages/relation",
+    "packages/utils",
+  ],
+  "exclude": [
+    "**/__tests__/**",
+    "**/tests/**",
+    "**/dist",
+    "play/src/**/*",
+    "play/src/vite-env.d.ts",
+    "packages/topology-vue2",
+    "packages/topology-vue3",
+  ]
+}

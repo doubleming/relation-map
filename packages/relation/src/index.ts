@@ -1,1 +1,1 @@
-const a = 123
+export const a = 123

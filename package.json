@@ -1,15 +1,19 @@
 {
   "name": "relation-map",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node script/dev.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "doubleming",
+  "dependencies": {
+    "@zs/relation": "workspace:*"
+  },
   "devDependencies": {
+    "@typescript-eslint/parser": "^5.60.0",
+    "esbuild": "^0.18.8",
+    "eslint": "^8.43.0",
+    "minimist": "^1.2.8",
     "typescript": "^5.1.3"
   }
 }

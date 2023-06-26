@@ -1,5 +1,5 @@
 {
-    "cSpell.words": ["doubleming"],
+    "cSpell.words": ["doubleming", "outfile"],
     "prettier.enable": false,
     "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {
