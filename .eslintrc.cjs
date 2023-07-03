@@ -6,6 +6,14 @@ module.exports = {
   parserOptions: {
     sourceType: 'module'
   },
+  env: {
+    "node": true,
+    "commonjs": true
+  },
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   rules: {
     'no-debugger': 'error',
     'no-unused-vars': [
@@ -84,5 +92,6 @@ module.exports = {
         'no-restricted-syntax': 'off'
       }
     }
-  ]
+  ],
+  ignorePatterns: [".eslintrc.cjs"],
 }
