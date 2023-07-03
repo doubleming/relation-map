@@ -22,6 +22,7 @@
     "paths": {
       "@zs/relation": ["packages/relation/src/index.ts"],
       "@zs/relation-utils": ["packages/utils/src/index.ts"],
+      "@zs/relation-compute": ["packages/compute/src/index.ts"],
     }
   },
   "include": [

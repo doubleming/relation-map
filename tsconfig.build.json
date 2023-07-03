@@ -8,6 +8,7 @@
     // "scripts/**/*",
     "packages/relation",
     "packages/utils",
+    "packages/compute",
   ],
   "exclude": [
     "**/__tests__/**",

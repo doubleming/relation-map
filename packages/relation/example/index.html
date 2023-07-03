@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="../dist/relation.global.js"></script>
+    <style>
+        #canvas{
+            display: block;
+            margin: 40px auto;
+        }
+    </style>
 </head>
 
 <body>
-    <div>weqwe</div>
     <canvas id="canvas"></canvas>
     <script>
         const nodes = [
@@ -78,9 +83,11 @@
     </script>
     <script>
         const { Graph } = ZsRelation
-        const graph = new Graph('canvas', {})
-        console.log(graph)
-        // graph.draw(nodes, lines)
+        const graph = new Graph('canvas', {
+            height: 800,
+            width: 1300
+        })
+        graph.draw(nodes, lines)
     </script>
 </body>
 

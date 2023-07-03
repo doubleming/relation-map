@@ -34,7 +34,8 @@ module.exports = {
       // still generates verbose helpers, so spread assignment is also prohiboted
       'ObjectExpression > SpreadElement',
       'AwaitExpression'
-    ]
+    ],
+    "@typescript-eslint/no-non-null-assertion": "off"
   },
   overrides: [
     // tests, no restrictions (runs in Node / jest with jsdom)

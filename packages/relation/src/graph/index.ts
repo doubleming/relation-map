@@ -1,9 +1,8 @@
 import { IOption, IdType } from "../types/types";
-import { baseGraph } from "./baseGraph";
+import { AnimationGraph } from "./animationGraph";
 
-export class Graph extends baseGraph {
+export class Graph extends AnimationGraph {
     constructor(idOrElement: IdType, options: IOption = {}) {
-        idOrElement = typeof idOrElement === 'string' ? document.querySelector(idOrElement) as HTMLCanvasElement : idOrElement
         super(idOrElement, options)
     }
 }

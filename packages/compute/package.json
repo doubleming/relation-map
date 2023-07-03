@@ -1,0 +1,21 @@
+{
+  "name": "@zs/relation-compute",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "module": "dist/relation-compute.esm-bundler.js",
+  "types": "dist/relation-compute.d.ts",
+  "keywords": [],
+  "author": "doubleming",
+  "scripts": {
+    "test": "vitest"
+  },
+  "license": "ISC",
+  "buildOptions": {
+    "name": "ZsRelationCompute",
+    "formats": [
+      "esm-bundler",
+      "cjs"
+    ]
+  }
+}
