@@ -73,7 +73,8 @@ function createConfig(format, output) {
             alias({
                 entries: {
                     '@zs/relation': resolve(__dirname, 'packages/relation/src/index.ts'),
-                    '@zs/relation-utils': resolve(__dirname, 'packages/utils/src/index.ts')
+                    '@zs/relation-utils': resolve(__dirname, 'packages/utils/src/index.ts'),
+                    '@zs/relation-compute': resolve(__dirname, 'packages/compute/src/index.ts'),
                 }
             }),
             esbuild({

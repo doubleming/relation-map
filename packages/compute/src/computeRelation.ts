@@ -7,7 +7,10 @@ export function computeRelation(nodes: Node[], lines: ILine[]) {
         const { from, to } = line
         const source = nodeMap.get(from)
         const target = nodeMap.get(to)
-        source && target && source.relation.push(target)
+        if (source && target) {
+            source.toRelation.push(target)
+            target.fromRelation.push(source)
+        }
     }
 }
 
