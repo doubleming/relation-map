@@ -13,4 +13,6 @@ export class DomGraph extends BaseGraph {
         this.el?.setAttribute('width', `${width}`)
         this.ctx = this.el.getContext('2d')!
     }
+
+    
 } 

@@ -18,9 +18,9 @@ describe('computeRelation', () => {
         ]
         const n = nodes.map(node => new Node(node))
         computeRelation(n, lines)
-        expect(n.find(({id}) => id === "1")?.relation.map(n => n.id)).include('2')
-        expect(n.find(({id}) => id === "1")?.relation.map(n => n.id)).include('3')
-        expect(n.find(({id}) => id === "2")?.relation.map(n => n.id)).include('1')
-        expect(n.find(({id}) => id === "2")?.relation.map(n => n.id)).include('3')
+        expect(n.find(({id}) => id === "1")?.toRelation.map(n => n.id)).include('2')
+        expect(n.find(({id}) => id === "1")?.toRelation.map(n => n.id)).include('3')
+        expect(n.find(({id}) => id === "2")?.toRelation.map(n => n.id)).include('1')
+        expect(n.find(({id}) => id === "2")?.toRelation.map(n => n.id)).include('3')
     })
 })

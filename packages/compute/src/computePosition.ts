@@ -1,7 +1,7 @@
 import { Graph, IOption, Node, } from "@zs/relation";
 import { calculateAngle, circlePosition } from "./utils";
 const {PI} = Math
-export function computePosition(graph: Graph, rootId?: string) {
+export function computePosition(graph: Graph, rootId?: string | number) {
     const { nodeMap, rootId: initRootId, options } = graph
     const { width, height, level } = options
     const rootNode = nodeMap.get(rootId || initRootId!)

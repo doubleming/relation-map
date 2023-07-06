@@ -4,6 +4,7 @@ export const defaultOption: IOption = {
     height: 500,
     width: 500,
     color: '#fff',
+    lineColor: '#fff',
     nodeRadius: 30,
     borderColor: '#000',
     level: 3,

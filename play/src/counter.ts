@@ -1,4 +1,4 @@
-import { Graph } from '@zs/relation'
+import { Graph } from "@zs/relation";
 export function setupCounter(element: HTMLCanvasElement) {
   const nodes = [
     { 'id': 'N1', 'text': '侯亮平', 'color': '#ec6941', 'borderColor': '#ff875e' },
@@ -66,7 +66,8 @@ export function setupCounter(element: HTMLCanvasElement) {
 
   const graph = new Graph(element, {
     height: 800,
-    width: 1300
+    width: 1300,
+    level: 3,
   })
-  graph.draw(nodes, lines, 'N6')
+  graph.draw('N6', lines, nodes)
 }
