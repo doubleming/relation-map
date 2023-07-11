@@ -3,6 +3,7 @@ import { Node } from "../nodes";
 import { OptionType, IdType, EventType } from "../types/types";
 import { DomGraph } from "./domGraph";
 import { Graph } from ".";
+import { computePosition } from "@zs/relation-compute";
 type handleEvent = (node: Node) => void
 export class EventGraph extends DomGraph {
     subEvent: Map<EventType, handleEvent[]> = new Map
@@ -36,12 +37,12 @@ export class EventGraph extends DomGraph {
         const target = this.findNode(point)
         const graph = this as unknown as Graph
         if (target) {
-            graph.render(target.id)
+            computePosition(graph, target.id)
         }
     }
 
     findNode(point: Point) {
-        return this.nodes.find(node => {
+        return (this as unknown as Graph).nodeList.find(node => {
             const distance = pointDistance(node, point)
             return distance < this.options.nodeRadius
         })

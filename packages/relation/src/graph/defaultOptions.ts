@@ -10,5 +10,7 @@ export const defaultOption: IOption = {
     level: 3,
     startAngle: 30,
     radius: [180, 120, 80],
-    defaultRadius: 40
+    defaultRadius: 40,
+    showLineText: true,
+    fontSize: 16
 }

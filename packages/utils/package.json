@@ -8,6 +8,9 @@
   "keywords": [],
   "author": "doubleming",
   "license": "ISC",
+  "scripts": {
+    "test": "vitest"
+  },
   "buildOptions": {
     "name": "ZsRelationUtils",
     "formats": [

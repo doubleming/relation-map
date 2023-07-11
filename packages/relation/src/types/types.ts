@@ -11,6 +11,8 @@ export interface IOption {
     radius: number[]  // 每一层的半径
     defaultRadius: number // 如果raduis，没有设置对应层级的半径，则使用此默认半径
     nodeRadius: number // 节点半径
+    showLineText: boolean // 是否显示节点连线的关系文字
+    fontSize: number // 文字大小
 }
 
 

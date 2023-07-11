@@ -1,5 +1,5 @@
 import { Node } from "@zs/relation";
-import { transformAngle } from "@zs/relation-utils";
+import { Point, transformAngle } from "@zs/relation-utils";
 const { sin, cos, ceil, PI, abs } = Math
 
 export function getNodeMap(nodes: Node[]) {
@@ -24,7 +24,7 @@ export function getNodeMap(nodes: Node[]) {
 *          *           *
 *         C      *
 */
-export function circlePosition({ x, y }: Node, r: number, theta: number) {
+export function circlePosition({ x, y }: Point, r: number, theta: number) {
     return {
         x: x + r * sin(theta),
         y: y - r * cos(theta)
