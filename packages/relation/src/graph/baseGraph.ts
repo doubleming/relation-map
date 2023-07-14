@@ -1,14 +1,14 @@
+import { Graph } from ".";
 import { Line, Node } from "../nodes";
 import { ILine, INode, IOption, IdType, OptionType } from "../types/types";
 import { defaultOption } from "./defaultOptions";
-
 export class BaseGraph {
     options: IOption;
     el: HTMLCanvasElement;
     nodes: Node[] = []
     lines: Line[] = []
     nodeMap: Map<string | number, Node> = new Map()
-    
+ 
     constructor(idOrElement: IdType, options: OptionType = {}, lines:ILine[] = [], nodes: INode[] = []) {
         if (typeof idOrElement === 'string') {
             idOrElement = document.querySelector(idOrElement) as HTMLCanvasElement
@@ -20,17 +20,18 @@ export class BaseGraph {
         }
         this.options = Object.assign(defaultOption, options)
         this.initData(lines, nodes)
+        
     }
 
     initLines(lines: ILine[]) {
         lines.forEach(line => {
-            this.lines.push(new Line(line, this.nodeMap))
+            this.lines.push(new Line(line, this as unknown as Graph))
         })
     }
 
     initNodes(nodes: INode[]) {
         nodes.forEach(node => {
-            const n = new Node(node)
+            const n = new Node(node, this as unknown as Graph)
             this.nodes.push(n)
             this.nodeMap.set(node.id, n)
         })

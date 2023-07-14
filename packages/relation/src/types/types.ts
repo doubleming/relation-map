@@ -13,6 +13,7 @@ export interface IOption {
     nodeRadius: number // 节点半径
     showLineText: boolean // 是否显示节点连线的关系文字
     fontSize: number // 文字大小
+    duration: number // 动画持续时长
 }
 
 

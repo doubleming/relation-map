@@ -21,7 +21,7 @@ export default targetPackages.map(pkg => {
     input: `./temp/packages/${pkg}/src/index.d.ts`,
     output: {
       file: `packages/${pkg}/dist/${pkg}.d.ts`,
-      format: 'es'
+      fromat: 'es'
     },
     plugins: [dts()],
   }

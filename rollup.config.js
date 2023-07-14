@@ -22,27 +22,27 @@ const name = pkgOptions.name || dirname(packageDir)
 const outputConfig = {
     "esm-bundler": {
         file: resolvePackage(`dist/${target}.esm-bundler.js`),
-        format: 'es'
+        fromat: 'es'
     },
     cjs: {
         file: resolvePackage(`dist/${target}.cjs.js`),
-        format: 'cjs'
+        fromat: 'cjs'
     },
     global: {
         file: resolvePackage(`dist/${target}.global.js`),
-        format: 'iife'
+        fromat: 'iife'
     }
 }
 
-const packageFormats = pkgOptions.formats
-const packageConfigs = packageFormats.map(format => createConfig(format, outputConfig[format]))
+const packagefromats = pkgOptions.fromats
+const packageConfigs = packagefromats.map(fromat => createConfig(fromat, outputConfig[fromat]))
 
 export default packageConfigs
 
-function createConfig(format, output) {
-    const isNodeBuild = format === 'cjs'
-    const isGlobalBuild = format === 'global'
-    const isBundlerESMBuild = /esm-bundler/.test(format)
+function createConfig(fromat, output) {
+    const isNodeBuild = fromat === 'cjs'
+    const isGlobalBuild = fromat === 'global'
+    const isBundlerESMBuild = /esm-bundler/.test(fromat)
 
     function resolveDefine() {
         return {
@@ -87,7 +87,7 @@ function createConfig(format, output) {
             commonjs({
                 sourceMap: false
             }),
-            ...(format === 'cjs' ? [] : [polyfillNode()]),
+            ...(fromat === 'cjs' ? [] : [polyfillNode()]),
             nodeResolve(),
         ],
         output

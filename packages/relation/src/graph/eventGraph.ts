@@ -28,8 +28,8 @@ export class EventGraph extends DomGraph {
     }
 
     addEvent() {
-        const canvas = this.el
-        canvas.addEventListener('click', this.handleClick.bind(this))
+        // const canvas = this.el
+        // canvas.addEventListener('click', this.handleClick.bind(this))
     }
 
     handleClick(event: MouseEvent) {
@@ -37,12 +37,13 @@ export class EventGraph extends DomGraph {
         const target = this.findNode(point)
         const graph = this as unknown as Graph
         if (target) {
+            console.log(target, 'target')
             computePosition(graph, target.id)
         }
     }
 
     findNode(point: Point) {
-        return (this as unknown as Graph).nodeList.find(node => {
+        return (this as unknown as Graph).nodes.find(node => {
             const distance = pointDistance(node, point)
             return distance < this.options.nodeRadius
         })

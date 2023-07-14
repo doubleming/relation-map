@@ -8,7 +8,7 @@ export enum AnimationType {
     QuadraticInOut,
 }
 
-export function tween(type: AnimationType, from: Point, to: Point,  duration: number) {
+export function tween<T extends Point | number>(type: AnimationType, from: T, to: T,  duration: number) {
 
     function easyNone(from: number, to: number, elapsed: number){
         return  from + (to - from) * elapsed
@@ -55,9 +55,14 @@ export function tween(type: AnimationType, from: Point, to: Point,  duration: nu
         const fn = fnMap.get(type)!
         let elapsed = time / duration
         elapsed = duration === 0 ? 1 : elapsed  > 1 ? 1 : elapsed
-        return {
-            x: fn(from.x, to.x, elapsed),
-            y: fn(from.y, to.y, elapsed)
-        } 
+        if (typeof from === 'number' && typeof to === 'number') {
+            return fn(from, to, elapsed) as T
+        }
+        if (typeof from === 'object' && typeof to === 'object') {
+            return {
+                x: fn(from.x, to.x, elapsed),
+                y: fn(from.y, to.y, elapsed)
+            } as T
+        }
     }
 }

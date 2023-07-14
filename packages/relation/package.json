@@ -14,10 +14,13 @@
   "license": "ISC",
   "buildOptions": {
     "name": "ZsRelation",
-    "formats": [
+    "fromats": [
       "esm-bundler",
       "cjs",
       "global"
     ]
+  },
+  "dependencies": {
+    "leafer-ui": "1.0.0-beta.4"
   }
 }

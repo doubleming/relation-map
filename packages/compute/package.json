@@ -13,7 +13,7 @@
   "license": "ISC",
   "buildOptions": {
     "name": "ZsRelationCompute",
-    "formats": [
+    "fromats": [
       "esm-bundler",
       "cjs"
     ]

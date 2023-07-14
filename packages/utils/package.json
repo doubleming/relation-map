@@ -13,7 +13,7 @@
   },
   "buildOptions": {
     "name": "ZsRelationUtils",
-    "formats": [
+    "fromats": [
       "esm-bundler",
       "cjs"
     ]

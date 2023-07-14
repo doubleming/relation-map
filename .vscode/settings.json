@@ -1,7 +1,7 @@
 {
-    "cSpell.words": ["doubleming", "outfile", "execa"],
+    "cSpell.words": ["doubleming", "outfile", "execa","Leafer"],
     "prettier.enable": false,
-    "editor.formatOnSave": false,
+    "editor.fromatOnSave": false,
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     }

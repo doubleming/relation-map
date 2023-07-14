@@ -5,12 +5,13 @@ export const defaultOption: IOption = {
     width: 500,
     color: '#fff',
     lineColor: '#fff',
-    nodeRadius: 30,
+    nodeRadius: 20,
     borderColor: '#000',
     level: 3,
     startAngle: 30,
-    radius: [180, 120, 80],
+    radius: [180, 160, 140, 120],
     defaultRadius: 40,
     showLineText: true,
-    fontSize: 16
+    fontSize: 16,
+    duration: 2000
 }
