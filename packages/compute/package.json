@@ -1,6 +1,7 @@
 {
   "name": "@zs/relation-compute",
   "version": "1.0.0",
+  "private":"true",
   "description": "",
   "main": "index.js",
   "module": "dist/relation-compute.esm-bundler.js",
@@ -13,7 +14,7 @@
   "license": "ISC",
   "buildOptions": {
     "name": "ZsRelationCompute",
-    "fromats": [
+    "formats": [
       "esm-bundler",
       "cjs"
     ]

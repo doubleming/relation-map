@@ -13,5 +13,6 @@ export const defaultOption: IOption = {
     defaultRadius: 40,
     showLineText: true,
     fontSize: 16,
-    duration: 2000
+    duration: 2000,
+    arrowLength: 10
 }

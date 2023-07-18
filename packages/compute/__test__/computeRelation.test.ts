@@ -16,7 +16,7 @@ describe('computeRelation', () => {
             { 'from': '2', 'to': '3', 'text': 'bc', 'color': '#d2c0a5', 'fontColor': '#d2c0a5' },
             { 'from': '2', 'to': '1', 'text': 'ba', 'color': '#d2c0a5', 'fontColor': '#d2c0a5' }
         ]
-        const n = nodes.map(node => new Node(node))
+        const n = nodes.map(node => new Node(node, {} as any))
         computeRelation(n, lines)
         expect(n.find(({id}) => id === "1")?.toRelation.map(n => n.id)).include('2')
         expect(n.find(({id}) => id === "1")?.toRelation.map(n => n.id)).include('3')

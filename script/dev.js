@@ -9,20 +9,20 @@ const require = createRequire(import.meta.url)
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const args = minimist(process.argv.slice(2))
 const target = args._[0] || 'relation'
-const fromat = args.f || 'global'
+const format = args.f || 'global'
 const pkg = require(`../packages/${target}/package.json`)
 
-const outputfromat = fromat.startsWith('global')
+const outputFormat = format.startsWith('global')
 ? 'iife'
-: fromat === 'cjs'
+: format === 'cjs'
 ? 'cjs'
 : 'esm'
 
-const outfile = resolve(__dirname, `../packages/${target}/dist/${target}.${fromat}.js`)
+const outfile = resolve(__dirname, `../packages/${target}/dist/${target}.${format}.js`)
 
 let external = []
 
-if (['cjs', 'esm'].includes(outputfromat)) {
+if (['cjs', 'esm'].includes(outputFormat)) {
     external = [
         ...external,
         ...Object.keys(pkg.dependencies || {}),
@@ -36,7 +36,7 @@ esbuild.context({
     bundle: true,
     external,
     sourcemap: true,
-    fromat: outputfromat,
+    format: outputFormat,
     globalName: pkg.buildOptions?.name,
-    platfrom: fromat === 'cjs' ? 'node' : 'browser'
+    platform: format === 'cjs' ? 'node' : 'browser'
 }).then(ctx => ctx.watch())
