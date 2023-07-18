@@ -13,6 +13,7 @@ jobs:
         
       - name: Install and Build
         run: |
+          npm install pnpm
           pnpm install
           pnpm build-play
           
