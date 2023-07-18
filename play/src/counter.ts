@@ -67,7 +67,7 @@ export function setupCounter(element: HTMLCanvasElement) {
   const graph = new Graph(element, {
     height: 800,
     width: 1300,
-    level: 3,
+    level: 2,
   })
   graph.draw('N6', lines, nodes)
 }

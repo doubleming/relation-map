@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "module": "dist/relation-utils.esm-bundler.js",
   "types": "dist/relation-utils.d.ts",
   "keywords": [],

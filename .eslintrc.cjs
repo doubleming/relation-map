@@ -65,7 +65,7 @@ module.exports = {
     // Packages targeting Node
     {
       files: [
-        'packages/{compiler-sfc,compiler-ssr,server-renderer,reactivity-transform}/**'
+        'packages/{compiler-sfc,compiler-ssr,server-renderer,reactivity-transfrom}/**'
       ],
       rules: {
         'no-restricted-globals': ['error', ...DOMGlobals],

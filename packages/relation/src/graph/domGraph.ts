@@ -1,21 +1,31 @@
 import { OptionType, IdType } from "../types/types";
 import { BaseGraph } from "./baseGraph";
-
+import { Leafer } from 'leafer-ui'
 export class DomGraph extends BaseGraph {
-    ctx: CanvasRenderingContext2D | undefined
+    leafer: Leafer
     constructor(idOrElement: IdType, options: OptionType = {}) {
         super(idOrElement, options)
-    }
-    initCanvas() {
-        const { height, width, fontSize } = this.options
-        // 设置宽高
-        this.el?.setAttribute('height', `${height}`)
-        this.el?.setAttribute('width', `${width}`)
-        this.ctx = this.el.getContext('2d')!
-        this.ctx.font = `${fontSize}px serif`;
-        this.ctx.textAlign = 'center'
-        this.ctx.textBaseline = 'middle'
+        const { width, height } = this.options
+        this.leafer = new Leafer({ view: this.el, width, height, start: true, zoom: { max: 4, min: 0.5 } })
     }
 
+    addLeafer() {
+        this.nodes.forEach(node => node.addLeafer())
+        this.lines.forEach(line => line.addLeader())
+    }
 
+    update(duration?: number) {
+        // node 自己更新节点
+        const { duration: defaultDuration } = this.options
+        this.updateNodes(duration ?? defaultDuration)
+        this.updateLines(duration ?? defaultDuration)
+    }
+
+    updateNodes(duration: number) {
+        this.nodes.forEach(node => node.update(duration))
+    }
+
+    updateLines(duration: number) {
+        this.lines.forEach(line => line.update(duration))
+    }
 } 
