@@ -1,0 +1,23 @@
+name: Build and Deploy
+on:
+  push: 
+    branches:
+      - main
+      
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Install and Build
+        run: |
+          pnpm install
+          pnpm build-play
+          
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: play/dist
+          
