@@ -17,17 +17,11 @@ jobs:
         with:
           version: 7
           run_install: false
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 'latest'
         
-      - name: Install
-        run:
+      - name: Install and Build
+        run: |
           pnpm install
-
-      - name: Build
-        run:
+          pnpm build
           pnpm run build-play
           
       - name: Deploy
