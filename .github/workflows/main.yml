@@ -22,9 +22,12 @@ jobs:
         with:
           node-version: 'latest'
         
-      - name: Install and Build
-        run: |
+      - name: Install
+        run:
           pnpm install
+
+      - name: Build
+        run:
           pnpm run build-play
           
       - name: Deploy
