@@ -14,5 +14,7 @@ export const defaultOption: IOption = {
     showLineText: true,
     fontSize: 16,
     duration: 2000,
-    arrowLength: 10
+    arrowLength: 10,
+    maxScale: 4,
+    minScale: 0.5
 }
