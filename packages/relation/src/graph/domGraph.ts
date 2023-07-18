@@ -5,8 +5,8 @@ export class DomGraph extends BaseGraph {
     leafer: Leafer
     constructor(idOrElement: IdType, options: OptionType = {}) {
         super(idOrElement, options)
-        const { width, height } = this.options
-        this.leafer = new Leafer({ view: this.el, width, height, start: true, zoom: { max: 4, min: 0.5 } })
+        const { width, height, maxScale, minScale } = this.options
+        this.leafer = new Leafer({ view: this.el, width, height, start: true, zoom: { max: maxScale, min: minScale } })
     }
 
     addLeafer() {

@@ -6,6 +6,8 @@ export interface IOption {
     borderColor: string  // 节点边框
     height: number // canvas高
     width: number // canvas宽
+    minScale: number // 最小缩放
+    maxScale: number // 最大缩放
     level: number // 显示层级，默认3层
     startAngle: number // 开始角度，角度制，比如30，代表30度
     radius: number[]  // 每一层的半径

@@ -34,6 +34,10 @@ const graph = new Graph(element, {
 graph.draw('N6', lines, nodes)
 ```
 
+## 操作
+- 鼠标中键平移画布
+- alt + 鼠标滚轴 缩放
+
 ## Graph 类方法
 
 > new 方法
@@ -57,6 +61,8 @@ graph.draw('N6', lines, nodes)
 | borderColor | 节点边框颜色  | string   | #000 |
 | height | canvas高  | number   | 500 |
 | width | canvas宽  | number   | 500 |
+| maxScale | 最小缩放  | number   | 4 |
+| minScale | 最大缩放  | number   | 0.5 |
 | level | 显示层级，默认3层  | number   | 3|
 | startAngle | 开始角度，角度制，比如30，代表30度  | number   | 30 |
 | radius | 每一层的半径  | number[]   | [180, 160, 140, 120] |
