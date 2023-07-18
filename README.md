@@ -1,4 +1,4 @@
-## 社交关系图
+<h2 style="text-align: center;"> 社交关系图 </h2>
 
 ## 安装
 ```sh
@@ -32,9 +32,23 @@ const graph = new Graph(element, {
 graph.draw('N6', lines, nodes)
 ```
 
+## Graph 类方法
 
-## Api配置参数
-| 选项 | 描述   | 类型   | 默认值  | 
+> new 方法
+```ts
+// element 为canvas元素或者canvas的id
+// options配置参数如下
+const graph = new Graph(elementOrId, options)
+```
+
+> draw 方法
+```ts
+// 第一个参数为rootId, 显示到中心的节点，lines喝nodes为节点和连线
+graph.draw('N6', lines, nodes)
+```
+
+## options配置参数
+| 属性 | 描述   | 类型   | 默认值  | 
 | --- | --- | --- | --- |
 | color | 节点颜色  | string   | #fff |
 | lineColor | 连线颜色  | string   | #fff |
@@ -50,3 +64,19 @@ graph.draw('N6', lines, nodes)
 | fontSize | 文字大小  | number   | 16 |
 | duration | 动画持续时长,单位毫秒  | number   | 2000 |
 | arrowLength | 箭头长度  | number   | 10 |
+
+## nodes属性
+| 属性 | 描述 | 类型 |
+| --- | --- | --- |
+| id | 节点id  | string \| number |
+| text | 节点显示文字  | string |
+| color | 节点颜色，如果配置，则替换options中配置，优先级高于options配置  | string |
+| borderColor | 节点边框颜色，如果配置，则替换options中配置，优先级高于options配置  | string |
+
+## lines属性
+| 属性 | 描述 | 类型 |
+| --- | --- | --- |
+| from | 线起始点节点id  | string \| number |
+| to | 线起终点节点id  | string \| number |
+| text | 节点直接关系文字  | string |
+| color | 线颜色，如果配置，则替换options中配置，优先级高于options配置  | string |
