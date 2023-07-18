@@ -1,5 +1,7 @@
 <h2 style="text-align: center;"> 社交关系图 </h2>
 
+![alt relation](./relation.gif)
+
 ## 安装
 ```sh
 # npm 
