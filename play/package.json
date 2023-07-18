@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "typescript": "^5.0.2",
+    "@zs/relation": "workspace:*",
     "vite": "^4.3.9"
   }
 }
