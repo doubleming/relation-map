@@ -6,7 +6,8 @@
     "dev": "node script/dev.js",
     "build": "node script/build.js && pnpm run build-dts",
     "build-dts": "tsc -p tsconfig.build.json && rollup -c rollup.dts.config.js",
-    "play": "pnpm run -C play dev"
+    "play": "pnpm run -C play dev",
+    "build-play": "pnpm run -C play build"
   },
   "author": "doubleming",
   "dependencies": {
