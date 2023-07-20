@@ -6,8 +6,6 @@ export class EventGraph extends DomGraph {
     subEvent: Map<EventType, handleEvent[]> = new Map
     constructor(idOrElement: IdType, options: OptionType = {}){
         super(idOrElement, options)
-
-        this.addEvent()
     }
 
     on(type: EventType, callback: handleEvent) {
@@ -22,11 +20,6 @@ export class EventGraph extends DomGraph {
     emit(type: EventType, node: Node) {
         const handle = this.subEvent.get(type) || []
         handle.forEach(cb => cb(node))
-    }
-
-    addEvent() {
-        const leafer = this.leafer
-        // 添加事件 todo！
     }
 
 } 

@@ -3,8 +3,9 @@ import { IOption } from "../types/types";
 export const defaultOption: IOption = {
     height: 500,
     width: 500,
-    color: '#fff',
-    lineColor: '#fff',
+    color: '#65a30d',
+    nodeTextColor: '#fff',
+    lineColor: '#16a34a',
     nodeRadius: 20,
     borderColor: '#000',
     level: 3,

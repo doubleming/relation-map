@@ -24,10 +24,11 @@ export class Node {
         this.id = node.id
         this.fromRelation = []
         this.toRelation = []
-        this.ellipseObj = new Ellipse({ x: this.x, y: this.y })
+        const {options: { color, nodeTextColor }} = graph
+        this.ellipseObj = new Ellipse({ x: this.x, y: this.y, fill: color })
         this.textObj = new Text({
             text: node.text || '',
-            fill: '#f00',
+            fill: nodeTextColor,
             textAlign: 'center',
             verticalAlign: 'middle'
         })
@@ -35,7 +36,7 @@ export class Node {
         this.group.add(this.textObj)
         this.group.opacity = this.opacity
 
-        // this.group.on(DragEvent.DRAG, this.handleDrag)
+        this.group.on(DragEvent.DRAG, this.handleDrag)
 
         this.group.on(PointerEvent.CLICK, this.handleClick)
 
@@ -54,7 +55,7 @@ export class Node {
         const {x, y} = e
         this.endX = this.x = x
         this.endY = this.y = y
-        this.updateText()
+        this.update(0)
         this.graph?.updateLines(0)
     }
 
@@ -89,7 +90,6 @@ export class Node {
         this.ellipseObj.set({
             width: nodeRadius * 2,
             height: nodeRadius * 2,
-            fill: '#fff',
             x: x,
             y: y
         })

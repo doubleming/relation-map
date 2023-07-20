@@ -56,8 +56,9 @@ graph.draw('N6', lines, nodes)
 ## options配置参数
 | 属性 | 描述   | 类型   | 默认值  | 
 | --- | --- | --- | --- |
-| color | 节点颜色  | string   | #fff |
-| lineColor | 连线颜色  | string   | #fff |
+| color | 节点颜色  | string   | #65a30d |
+| nodeTextColor | 节点文本颜色  | string   | #fff |
+| lineColor | 连线颜色  | string   | #16a34a |
 | borderColor | 节点边框颜色  | string   | #000 |
 | height | canvas高  | number   | 500 |
 | width | canvas宽  | number   | 500 |

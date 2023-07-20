@@ -1,9 +1,9 @@
 import { computePosition, computeRelation } from "@zs/relation-compute";
 import { ILine, INode, OptionType, IdType } from "../types/types";
-import { DrawGraph } from "./drawGraph";
 import { LeaferEvent } from "leafer-ui";
+import { EventGraph } from "./eventGraph";
 
-export class AnimationGraph extends DrawGraph {
+export class AnimationGraph extends EventGraph {
     rootId: string | number | undefined
     constructor(idOrElement: IdType, options: OptionType = {}) {
         super(idOrElement, options)
