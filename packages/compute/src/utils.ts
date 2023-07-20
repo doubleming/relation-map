@@ -1,6 +1,6 @@
 import { Line, Node } from "@zs/relation";
-import { Point, transfromAngle } from "@zs/relation-utils";
-const { sin, cos, ceil, PI, abs, atan } = Math
+import { Point, transformAngle } from "@zs/relation-utils";
+const { sin, cos, PI, abs, atan } = Math
 
 export function getNodeMap(nodes: Node[]) {
     const nodeMap = new Map<string | number, Node>()
@@ -23,6 +23,11 @@ export function getNodeMap(nodes: Node[]) {
 *        *     *         *
 *          *           *
 *         C      *
+* 根据圆心和角度计算圆上点的坐标 
+* @param param0 圆心坐标
+* @param r 圆的半径
+* @param theta 圆上点与圆心连线和垂直方向顺时针连线
+* @returns 给定角度圆上点坐标
 */
 export function circlePosition({ x, y }: Point, r: number, theta: number) {
     return {
@@ -66,7 +71,7 @@ export function calculateAngle(root: Node, parentNode: Node | null, startAngle: 
         const coefficient = abs(mid - index) * 2
         return root.theta + prefix * invariant * coefficient
     } else {
-        return transfromAngle(startAngle, 'degree') + avgAngle * index
+        return transformAngle(startAngle, 'degree') + avgAngle * index
     }
 }
 
