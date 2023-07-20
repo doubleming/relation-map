@@ -1,7 +1,7 @@
 {
   "name": "@zs/relation",
   "version": "1.0.0",
-  "description": "社交关系图",
+  "description": "一个功能丰富的动态社交关系图，帮助提高节点关系分析效率",
   "main": "index.js",
   "module": "dist/relation.esm-bundler.js",
   "types": "dist/relation.d.ts",
@@ -9,9 +9,24 @@
     "index.js",
     "dist"
   ],
-  "keywords": [],
+  "homepage": "https://doubleming.github.io/relation-map/",
+  "keywords": [
+    "relation",
+    "library",
+    "map"
+  ],
   "author": "doubleming",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doubleming/relation-map.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/doubleming/relation-map/issues"
+  },
+  "license": "MIT",
   "buildOptions": {
     "name": "ZsRelation",
     "formats": [

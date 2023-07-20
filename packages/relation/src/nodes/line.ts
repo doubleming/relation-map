@@ -22,7 +22,7 @@ export class Line {
         const { to, from } = line
         this.from = nodeMap.get(from)
         this.to = nodeMap.get(to)
-        this.lineObj = new LLine({ stroke: lineColor, strokeWidth: 1, opacity: this.opacity })
+        this.lineObj = new LLine({ stroke: line.color || lineColor, strokeWidth: 1, opacity: this.opacity })
         this.textObj = new Text({
             text: line.text || '',
             fill: lineColor,

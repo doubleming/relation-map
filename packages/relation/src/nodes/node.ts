@@ -25,7 +25,7 @@ export class Node {
         this.fromRelation = []
         this.toRelation = []
         const {options: { color, nodeTextColor }} = graph
-        this.ellipseObj = new Ellipse({ x: this.x, y: this.y, fill: color })
+        this.ellipseObj = new Ellipse({ x: this.x, y: this.y, fill: node.color || color })
         this.textObj = new Text({
             text: node.text || '',
             fill: nodeTextColor,
