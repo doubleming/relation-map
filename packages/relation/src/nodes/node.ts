@@ -45,6 +45,7 @@ export class Node {
     handleClick = () => {
         const rootId = this.graph.rootId
         if (rootId === this.id) return  // 如果点击的是根节点，则不做任何处理
+        this.graph.emit('click', this)
         computePosition(this.graph, this.id)
         setTimeout(() => {
             this.graph.update()

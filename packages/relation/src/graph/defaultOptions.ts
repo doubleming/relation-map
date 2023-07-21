@@ -6,6 +6,7 @@ export const defaultOption: IOption = {
     color: '#65a30d',
     nodeTextColor: '#fff',
     lineColor: '#16a34a',
+    lineFontColor: '#16a34a',
     nodeRadius: 20,
     borderColor: '#000',
     level: 3,

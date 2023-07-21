@@ -4,6 +4,7 @@ export interface IOption {
     color: string // 节点颜色
     nodeTextColor: string // 节点文字颜色
     lineColor: string // 连线颜色
+    lineFontColor: string // 连线字体颜色
     borderColor: string  // 节点边框
     height: number // canvas高
     width: number // canvas宽

@@ -25,7 +25,7 @@ export class Line {
         this.lineObj = new LLine({ stroke: line.color || lineColor, strokeWidth: 1, opacity: this.opacity })
         this.textObj = new Text({
             text: line.text || '',
-            fill: lineColor,
+            fill: line.fontColor || lineColor,
             textAlign: 'center',
             verticalAlign: 'middle'
         })
