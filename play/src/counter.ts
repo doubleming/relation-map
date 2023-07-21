@@ -69,8 +69,8 @@ export function setupCounter(element: HTMLCanvasElement) {
     width: 1300,
     level: 2,
   })
-  graph.on('click', (node) => {
-    alert(`当前点击节点为：${node.origin.text}`)
-  })
+  // graph.on('click', (node) => {
+  //   alert(`当前点击节点为：${node.origin.text}`)
+  // })
   graph.draw('N6', lines, nodes)
 }

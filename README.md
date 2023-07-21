@@ -53,6 +53,19 @@ const graph = new Graph(elementOrId, options)
 graph.draw('N6', lines, nodes)
 ```
 
+> 事件监听
+```ts
+// 目前仅完成click事件的触发
+// 订阅click事件，当click触发时，会自动调用回调函数，同一事件可以订阅多个事件
+graph.on('click', (node) => {
+  alert(`当前点击节点为：${node.origin.text}`)
+})
+// 订阅第二个事件
+graph.on('click', (node) => {
+  alert('graph被点击了')
+})
+```
+
 ## options配置参数
 | 属性 | 描述   | 类型   | 默认值  | 
 | --- | --- | --- | --- |
