@@ -36,7 +36,7 @@ export class Node {
         this.group.add(this.textObj)
         this.group.opacity = this.opacity
 
-        this.group.on(DragEvent.DRAG, this.handleDrag)
+        // this.group.on(DragEvent.DRAG, this.handleDrag)
 
         this.group.on(PointerEvent.CLICK, this.handleClick)
 
