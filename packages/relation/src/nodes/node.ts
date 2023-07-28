@@ -36,7 +36,7 @@ export class Node {
         this.group.add(this.textObj)
         this.group.opacity = this.opacity
 
-        // this.group.on(DragEvent.DRAG, this.handleDrag)
+        this.group.on(DragEvent.DRAG, this.handleDrag)
 
         this.group.on(PointerEvent.CLICK, this.handleClick)
 
@@ -53,10 +53,13 @@ export class Node {
     }
 
     handleDrag = (e: DragEvent) => {
+        // console.log(e, 'handleDrag')
         const {x, y} = e
         this.endX = this.x = x
         this.endY = this.y = y
-        this.update(0)
+        // this.update(0)
+        this.updateEllipse(x, y)
+        this.updateText()
         this.graph?.updateLines(0)
     }
 
