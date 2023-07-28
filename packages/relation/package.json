@@ -1,12 +1,14 @@
 {
   "name": "@double_ming/relation",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "一个功能丰富的动态社交关系图，帮助提高节点关系分析效率",
   "main": "index.js",
   "module": "dist/relation.esm-bundler.js",
   "types": "dist/relation.d.ts",
   "files": [
     "index.js",
+    "README.md",
+    "relation.gif",
     "dist"
   ],
   "homepage": "https://doubleming.github.io/relation-map/",
