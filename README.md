@@ -5,16 +5,16 @@
 ## 安装
 ```sh
 # npm 
-npm install @zs/relation
+npm install @double_ming/relation
 # yarn 
-yarn add @zs/relation
+yarn add @double_ming/relation
 # pnpm
-pnpm add @zs/relation
+pnpm add @double_ming/relation
 ```
 
 ## 使用
 ```ts
-import { Graph } from "@zs/relation";
+import { Graph } from "@double_ming/relation";
 // element 为canvas元素
 const graph = new Graph(element, {
     height: 800,

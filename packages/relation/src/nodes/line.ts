@@ -2,8 +2,8 @@ import { ILine } from "../types/types"
 import { Node } from "../nodes";
 import { Group, Line as LLine, Path, Text } from 'leafer-ui'
 import { Graph } from "../graph";
-import { AnimationType, tween } from "@zs/relation-utils"
-import { getArrowPath, getRoundPoint } from '@zs/relation-compute'
+import { AnimationType, tween } from "@double_ming/relation-utils"
+import { getArrowPath, getRoundPoint } from '@double_ming/relation-compute'
 
 export class Line {
     origin: ILine

@@ -1,5 +1,5 @@
 {
-  "name": "@zs/relation",
+  "name": "@double_ming/relation",
   "version": "1.0.0",
   "description": "一个功能丰富的动态社交关系图，帮助提高节点关系分析效率",
   "main": "index.js",

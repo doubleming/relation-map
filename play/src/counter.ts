@@ -1,4 +1,4 @@
-import { Graph } from "@zs/relation";
+import { Graph } from "@double_ming/relation";
 export function setupCounter(element: HTMLCanvasElement) {
   const nodes = [
     { 'id': 'N1', 'text': '侯亮平', 'color': '#ec6941', 'borderColor': '#ff875e' },

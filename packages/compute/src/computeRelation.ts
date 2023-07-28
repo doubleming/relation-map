@@ -1,4 +1,4 @@
-import { ILine, Node } from "@zs/relation";
+import { ILine, Node } from "@double_ming/relation";
 import { getNodeMap } from "./utils";
 
 export function computeRelation(nodes: Node[], lines: ILine[]) {

@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@zs/relation": "workspace:*"
+    "@double_ming/relation": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.0.2",

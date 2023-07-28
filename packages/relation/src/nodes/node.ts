@@ -1,8 +1,8 @@
-import { AnimationType, tween } from "@zs/relation-utils"
+import { AnimationType, tween } from "@double_ming/relation-utils"
 import { INode } from "../types/types"
 import { DragEvent, Ellipse, Group, Text, PointerEvent } from 'leafer-ui'
 import { Graph } from "../graph"
-import { computePosition } from "@zs/relation-compute"
+import { computePosition } from "@double_ming/relation-compute"
 
 export class Node {
     x = 0

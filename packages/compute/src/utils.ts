@@ -1,5 +1,5 @@
-import { Line, Node } from "@zs/relation";
-import { Point, transformAngle } from "@zs/relation-utils";
+import { Line, Node } from "@double_ming/relation";
+import { Point, transformAngle } from "@double_ming/relation-utils";
 const { sin, cos, PI, abs, atan } = Math
 
 export function getNodeMap(nodes: Node[]) {

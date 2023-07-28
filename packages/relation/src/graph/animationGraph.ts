@@ -1,4 +1,4 @@
-import { computePosition, computeRelation } from "@zs/relation-compute";
+import { computePosition, computeRelation } from "@double_ming/relation-compute";
 import { ILine, INode, OptionType, IdType } from "../types/types";
 import { LeaferEvent } from "leafer-ui";
 import { EventGraph } from "./eventGraph";

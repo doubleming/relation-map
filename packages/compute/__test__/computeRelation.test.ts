@@ -1,5 +1,5 @@
-import { ILine, INode, Node } from "@zs/relation";
-import { computeRelation } from "@zs/relation-compute";
+import { ILine, INode, Node } from "@double_ming/relation";
+import { computeRelation } from "@double_ming/relation-compute";
 import { describe, it, expect } from 'vitest'
 
 describe('computeRelation', () => {

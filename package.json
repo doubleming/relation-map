@@ -12,9 +12,9 @@
   },
   "author": "doubleming",
   "dependencies": {
-    "@zs/relation": "workspace:*",
-    "@zs/relation-utils": "workspace:*",
-    "@zs/relation-compute": "workspace:*"
+    "@double_ming/relation": "workspace:*",
+    "@double_ming/relation-utils": "workspace:*",
+    "@double_ming/relation-compute": "workspace:*"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^5.0.0",
