@@ -75,9 +75,10 @@ export class Line {
 
     updateText(x1: number, y1: number, x2: number, y2: number, opacity: number) {
         const { width, height } = this.textObj.getBounds("content")
+        const { leafer: { scaleX, scaleY } } = this.graph!
         this.textObj.set({
-            x: (x1 + x2 - width) / 2,
-            y: (y1 + y2 - height) / 2,
+            x: (x1 + x2 - (width / scaleX)) / 2,
+            y: (y1 + y2 - height / scaleY) / 2,
             opacity
         })
     }

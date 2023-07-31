@@ -18,13 +18,13 @@ export class Node {
     show = false
     group: Group = new Group()
     textObj: Text
-    opacity=0
+    opacity = 0
     constructor(node: INode, public graph: Graph) {
         this.origin = node
         this.id = node.id
         this.fromRelation = []
         this.toRelation = []
-        const {options: { color, nodeTextColor }} = graph
+        const { options: { color, nodeTextColor } } = graph
         this.ellipseObj = new Ellipse({ x: this.x, y: this.y, fill: node.color || color })
         this.textObj = new Text({
             text: node.text || '',
@@ -54,7 +54,7 @@ export class Node {
 
     handleDrag = (e: DragEvent) => {
         // console.log(e, 'handleDrag')
-        const {x, y} = e
+        const { x, y } = e
         this.endX = this.x = x
         this.endY = this.y = y
         // this.update(0)
@@ -71,7 +71,7 @@ export class Node {
         const startPoint = { x: this.x, y: this.y }
         const endPoint = { x: this.endX, y: this.endY }
         const ani = tween(AnimationType.QuadraticInOut, startPoint, endPoint, duration)
-        const aniOpt =  tween(AnimationType.QuadraticInOut, this.opacity, endOpacity, duration)
+        const aniOpt = tween(AnimationType.QuadraticInOut, this.opacity, endOpacity, duration)
         const _move = () => {
             const time = Date.now() - start
             const { x, y } = ani(time)!
@@ -105,8 +105,8 @@ export class Node {
         const { nodeRadius } = graph!.options
         const { width, height } = this.textObj.getBounds("content")
         this.textObj.set({
-            x: x - width / 2 + nodeRadius * scaleX,
-            y: y - height / 2 + nodeRadius * scaleY
+            x: x - width / (2 * scaleX) + nodeRadius,
+            y: y - height / (2 * scaleY) + nodeRadius
         })
     }
 
