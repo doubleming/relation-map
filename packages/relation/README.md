@@ -49,7 +49,7 @@ const graph = new Graph(elementOrId, options)
 
 > draw 方法
 ```ts
-// 第一个参数为rootId, 显示到中心的节点，lines喝nodes为节点和连线
+// 第一个参数rootId代表canvas中心显示得节点id，nodes和lines分别为节点和连线
 graph.draw('N6', lines, nodes)
 ```
 
