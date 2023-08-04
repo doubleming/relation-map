@@ -8,7 +8,6 @@
   "files": [
     "index.js",
     "README.md",
-    "relation.gif",
     "dist"
   ],
   "homepage": "https://doubleming.github.io/relation-map/",
