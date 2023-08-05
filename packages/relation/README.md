@@ -51,6 +51,9 @@ const graph = new Graph(elementOrId, options)
 ```ts
 // 第一个参数rootId代表canvas中心显示得节点id，nodes和lines分别为节点和连线
 graph.draw('N6', lines, nodes)
+
+// 重新增量更新配置
+graph.update(options)
 ```
 
 > 事件监听
@@ -67,6 +70,7 @@ graph.on('click', (node) => {
 ```
 
 ## 更新动态
+- 2023/8/5 新增加graph 更新功能
 - 2023/8/5 新增加连线是否为虚线，以及是否线条流动
 - 2023/8/4 简了包体积
 - 2023/7/31 修复了缩放时文字错位问题
