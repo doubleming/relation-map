@@ -14,15 +14,25 @@ export class Line {
     group: Group = new Group()
     textObj: Text
     arrowObj: Path
+    dashPattern: number[] = []
+    dashOffset = 16
     opacity = 0
     constructor(line: ILine, public graph: Graph) {
         const { nodeMap, options } = graph
-        const { lineColor } = options
+        const { lineColor, isDashLine, dashPattern, isLineFlow, lineWidth } = options
         this.origin = line
         const { to, from } = line
         this.from = nodeMap.get(from)
         this.to = nodeMap.get(to)
-        this.lineObj = new LLine({ stroke: line.color || lineColor, strokeWidth: 1, opacity: this.opacity })
+        this.dashPattern = dashPattern
+        const lineStyle = {
+            stroke: line.color || lineColor,
+            strokeWidth: lineWidth,
+            opacity: this.opacity,
+            ...(isDashLine ? { dashPattern } : {}),
+            ...(isLineFlow ? { dashOffset: this.dashOffset } : {})
+        }
+        this.lineObj = new LLine(lineStyle)
         this.textObj = new Text({
             text: line.text || '',
             fill: line.fontColor || lineColor,
@@ -35,6 +45,12 @@ export class Line {
         this.group.add(this.lineObj)
         this.group.add(this.textObj)
         this.group.add(this.arrowObj)
+
+        // 如果isLineFlow为true，则开启线条动画
+        if (isLineFlow && isDashLine) {
+            this.updateLineDashOffset()
+        }
+
     }
 
     update(duration: number) {
@@ -99,6 +115,20 @@ export class Line {
             return getArrowPath(from.x, from.y, to.x, to.y, arrowLength)
         }
         return ``
+    }
+
+    updateLineDashOffset() {
+        const _update = () => {
+            if (this.dashOffset === 0) {
+                this.dashOffset = 16
+            }
+            this.lineObj.set({
+                dashOffset: this.dashOffset
+            })
+            this.dashOffset--
+            requestAnimationFrame(_update)
+        }
+        _update()
     }
 
     addLeader() {

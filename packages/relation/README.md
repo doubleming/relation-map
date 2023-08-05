@@ -73,6 +73,7 @@ graph.on('click', (node) => {
 | nodeTextColor | 节点文本颜色  | string   | #fff |
 | lineColor | 连线颜色  | string   | #16a34a |
 | lineFontColor | 连线字体颜色  | string   | #16a34a |
+| lineWidth | 连线线宽，默认为1  | number   | 1 |
 | borderColor | 节点边框颜色  | string   | #000 |
 | height | canvas高  | number   | 500 |
 | width | canvas宽  | number   | 500 |
@@ -87,6 +88,9 @@ graph.on('click', (node) => {
 | fontSize | 文字大小  | number   | 16 |
 | duration | 动画持续时长,单位毫秒  | number   | 2000 |
 | arrowLength | 箭头长度  | number   | 10 |
+| isDashLine | 是否是虚线，默认不是  | boolean   | false |
+| dashPattern | 虚线的模式，默认为[10, 10]  | number[]   | [10, 10] |
+| isLineFlow | 线条是否流动，默认不流动  | boolean   | false |
 
 ## nodes属性
 | 属性 | 描述 | 类型 |

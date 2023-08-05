@@ -7,6 +7,7 @@ export const defaultOption: IOption = {
     nodeTextColor: '#fff',
     lineColor: '#16a34a',
     lineFontColor: '#16a34a',
+    lineWidth: 1,
     nodeRadius: 20,
     borderColor: '#000',
     level: 3,
@@ -18,5 +19,8 @@ export const defaultOption: IOption = {
     duration: 2000,
     arrowLength: 10,
     maxScale: 4,
-    minScale: 0.5
+    minScale: 0.5,
+    isDashLine: false,
+    dashPattern: [10, 10],
+    isLineFlow: false
 }

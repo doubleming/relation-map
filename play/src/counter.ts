@@ -68,6 +68,8 @@ export function setupCounter(element: HTMLCanvasElement) {
     height: 800,
     width: 1300,
     level: 2,
+    isDashLine: true,
+    isLineFlow: true
   })
   // graph.on('click', (node) => {
   //   alert(`当前点击节点为：${node.origin.text}`)

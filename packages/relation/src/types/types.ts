@@ -5,6 +5,7 @@ export interface IOption {
     nodeTextColor: string // 节点文字颜色
     lineColor: string // 连线颜色
     lineFontColor: string // 连线字体颜色
+    lineWidth: number // 线宽， 默认为1
     borderColor: string  // 节点边框
     height: number // canvas高
     width: number // canvas宽
@@ -19,6 +20,9 @@ export interface IOption {
     fontSize: number // 文字大小
     duration: number // 动画持续时长
     arrowLength: number // 箭头长度
+    isDashLine: boolean // 是否是虚线，默认不是
+    dashPattern: number[] // 虚线的模式，默认为[10, 10]
+    isLineFlow: boolean // 线条是否流动，默认不流动
 }
 
 
