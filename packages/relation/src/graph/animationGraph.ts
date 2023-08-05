@@ -28,8 +28,14 @@ export class AnimationGraph extends EventGraph {
         // 计算节点位置,不断更新
         this.leafer.on(LeaferEvent.READY, () => {
             computePosition(this, rootId)
-            this.update()
+            this.updateAnimation()
         })
+    }
+
+    update(options: OptionType) {
+        const { duration } = options
+        this.updateOptions(options)
+        this.updateAnimation(duration || 0)
     }
 
 }

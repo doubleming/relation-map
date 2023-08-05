@@ -1,11 +1,25 @@
 import './style.css'
 import { setupCounter } from './counter.ts'
+import { OptionType } from '@double_ming/relation'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-  <div style="margin-bottom: 10px">操作提示：鼠标中间拖动画布、ctrl+滚轮缩放、 点击节点则以该节点为中心，动画转移画布</div>
-  <canvas id="canvas"></canvas>
-  </div>
-`
+const graph = setupCounter(document.querySelector<HTMLCanvasElement>('#canvas')!)
 
-setupCounter(document.querySelector<HTMLCanvasElement>('#canvas')!)
+function update(type: string) {
+  const options = {} as OptionType
+  if (type === 'solid') {
+    options.isDashLine = false
+  }
+  if (type === 'dash') {
+    options.isDashLine = true
+  }
+  if (type === 'static') {
+    options.isLineFlow = false
+  }
+  if (type === 'flow') {
+    options.isLineFlow = true
+  }
+  graph.update(options)
+}
+
+
+(window as any).update = update

@@ -66,7 +66,7 @@ export function setupCounter(element: HTMLCanvasElement) {
 
   const graph = new Graph(element, {
     height: 800,
-    width: 1300,
+    width: 1200,
     level: 2,
     isDashLine: true,
     isLineFlow: true
@@ -75,4 +75,6 @@ export function setupCounter(element: HTMLCanvasElement) {
   //   alert(`当前点击节点为：${node.origin.text}`)
   // })
   graph.draw('N6', lines, nodes)
+
+  return graph
 }

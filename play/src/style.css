@@ -37,7 +37,7 @@ h1 {
 }
 
 #app {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -94,4 +94,24 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+
+.container {
+  display: flex;
+}
+
+.options {
+  width: 300px;
+}
+
+.options-title {
+  text-align: center;
+}
+
+.options-title__btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
 }

@@ -23,6 +23,10 @@ export class BaseGraph {
         
     }
 
+    updateOptions(options: OptionType = {}) {
+        this.options = Object.assign(this.options, options)
+    }
+
     initLines(lines: ILine[]) {
         lines.forEach(line => {
             this.lines.push(new Line(line, this as unknown as Graph))

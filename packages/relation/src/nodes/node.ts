@@ -19,12 +19,15 @@ export class Node {
     group: Group = new Group()
     textObj: Text
     opacity = 0
+    moveUpdateId = 0
+    color: string
     constructor(node: INode, public graph: Graph) {
         this.origin = node
         this.id = node.id
         this.fromRelation = []
         this.toRelation = []
         const { options: { color, nodeTextColor } } = graph
+        this.color = color
         this.ellipseObj = new Ellipse({ x: this.x, y: this.y, fill: node.color || color })
         this.textObj = new Text({
             text: node.text || '',
@@ -46,9 +49,10 @@ export class Node {
         const rootId = this.graph.rootId
         if (rootId === this.id) return  // 如果点击的是根节点，则不做任何处理
         this.graph.emit('click', this)
+        this.graph.rootId = this.id
         computePosition(this.graph, this.id)
         setTimeout(() => {
-            this.graph.update()
+            this.graph.updateAnimation()
         }, 0);
     }
 
@@ -81,32 +85,36 @@ export class Node {
             this.group.opacity = opacity
             this.opacity = opacity
             if (duration > 0 && time <= duration)
-                requestAnimationFrame(_move)
+                this.moveUpdateId = requestAnimationFrame(_move)
         }
+        cancelAnimationFrame(this.moveUpdateId)
         _move()
     }
 
 
     updateEllipse(x: number, y: number) {
         const { nodeRadius } = this.graph!.options
+        const { color, origin: { color: oColor } } = this
         this.x = x
         this.y = y
         this.ellipseObj.set({
             width: nodeRadius * 2,
             height: nodeRadius * 2,
             x: x,
-            y: y
+            y: y,
+            fill: oColor || color
         })
     }
 
     updateText() {
         const { x, y, graph } = this
         const { leafer: { scaleX, scaleY } } = graph
-        const { nodeRadius } = graph!.options
+        const { nodeRadius, nodeTextColor } = graph!.options
         const { width, height } = this.textObj.getBounds("content")
         this.textObj.set({
             x: x - width / (2 * scaleX) + nodeRadius,
-            y: y - height / (2 * scaleY) + nodeRadius
+            y: y - height / (2 * scaleY) + nodeRadius,
+            fill: nodeTextColor
         })
     }
 

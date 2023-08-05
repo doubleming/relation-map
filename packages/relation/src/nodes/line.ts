@@ -17,6 +17,8 @@ export class Line {
     dashPattern: number[] = []
     dashOffset = 16
     opacity = 0
+    dashUpdateId = 0
+    moveUpdateId = 0
     constructor(line: ILine, public graph: Graph) {
         const { nodeMap, options } = graph
         const { lineColor, isDashLine, dashPattern, isLineFlow, lineWidth } = options
@@ -29,8 +31,6 @@ export class Line {
             stroke: line.color || lineColor,
             strokeWidth: lineWidth,
             opacity: this.opacity,
-            ...(isDashLine ? { dashPattern } : {}),
-            ...(isLineFlow ? { dashOffset: this.dashOffset } : {})
         }
         this.lineObj = new LLine(lineStyle)
         this.textObj = new Text({
@@ -45,17 +45,11 @@ export class Line {
         this.group.add(this.lineObj)
         this.group.add(this.textObj)
         this.group.add(this.arrowObj)
-
-        // 如果isLineFlow为true，则开启线条动画
-        if (isLineFlow && isDashLine) {
-            this.updateLineDashOffset()
-        }
-
     }
 
     update(duration: number) {
         const { graph } = this
-        const { nodeRadius } = graph!.options
+        const { nodeRadius, isDashLine, isLineFlow } = graph!.options
         const show = this.from?.show && this.to?.show
         this.group.visible = show || false
         const endOpacity = !show ? 0 : 1
@@ -75,36 +69,52 @@ export class Line {
             this.updateArrow(x1, y1, x2, y2, opacity || 0)
             this.opacity = endOpacity
             if (time <= duration)
-                requestAnimationFrame(_move)
+                this.moveUpdateId = requestAnimationFrame(_move)
         }
+        cancelAnimationFrame(this.moveUpdateId)
+        cancelAnimationFrame(this.dashUpdateId)
         _move()
+         // 如果isLineFlow为true，则开启线条动画
+         if (isLineFlow && isDashLine) {
+            this.updateLineDashOffset()
+        }
     }
 
     updateLine(x1: number, y1: number, x2: number, y2: number, opacity: number) {
+        const { lineColor, isDashLine, dashPattern, isLineFlow, lineWidth } = this.graph.options
+        const { origin: { color } } = this
         this.lineObj.set({
             toPoint: { x: x2 - x1, y: y2 - y1 },
             x: x1,
             y: y1,
-            opacity
+            opacity,
+            stroke: color || lineColor,
+            strokeWidth: lineWidth,
+            ...(isDashLine ? { dashPattern } : {dashPattern: []}),
+            ...(isLineFlow ? { dashOffset: this.dashOffset } : {})
         })
     }
 
     updateText(x1: number, y1: number, x2: number, y2: number, opacity: number) {
         const { width, height } = this.textObj.getBounds("content")
-        const { leafer: { scaleX, scaleY } } = this.graph!
+        const { leafer: { scaleX, scaleY }, options: { lineColor } } = this.graph!
+        const { origin: { fontColor } } = this
         this.textObj.set({
             x: (x1 + x2 - (width / scaleX)) / 2,
             y: (y1 + y2 - height / scaleY) / 2,
-            opacity
+            opacity,
+            fill: fontColor || lineColor,
         })
     }
 
     updateArrow(x1: number, y1: number, x2: number, y2: number, opacity: number) {
-        const { arrowLength } = this.graph.options
+        const { arrowLength, lineColor } = this.graph.options
         const path = getArrowPath(x1, y1, x2, y2, arrowLength)
+        const { origin: { color } } = this
         this.arrowObj.set({
             path,
-            opacity
+            opacity,
+            fill: color || lineColor,
         })
     }
 
@@ -126,7 +136,7 @@ export class Line {
                 dashOffset: this.dashOffset
             })
             this.dashOffset--
-            requestAnimationFrame(_update)
+            this.dashUpdateId = requestAnimationFrame(_update)
         }
         _update()
     }

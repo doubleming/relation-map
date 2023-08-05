@@ -14,7 +14,7 @@ export class DomGraph extends BaseGraph {
         this.lines.forEach(line => line.addLeader())
     }
 
-    update(duration?: number) {
+    updateAnimation(duration?: number) {
         // node 自己更新节点
         const { duration: defaultDuration } = this.options
         this.updateNodes(duration ?? defaultDuration)

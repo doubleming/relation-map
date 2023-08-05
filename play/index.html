@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>relation map</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>relation map</title>
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <div style="margin-bottom: 10px">操作提示：鼠标中间拖动画布、ctrl+滚轮缩放、 点击节点则以该节点为中心，动画转移画布</div>
+      <div class="container">
+        <div class="options">
+          <div class="options-title">配置</div>
+          <div class="options-title__btn"><button onclick="update('solid')">实线</button><button onclick="update('dash')">虚线</button></div>
+          <div class="options-title__btn"><button onclick="update('static')">静止线</button><button onclick="update('flow')">流动线</button></div>
+        </div>
+        <canvas id="canvas"></canvas>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>

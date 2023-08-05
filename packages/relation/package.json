@@ -1,7 +1,7 @@
 {
   "name": "@double_ming/relation",
   "version": "1.0.5",
-  "description": "一个功能丰富的动态社交关系图，帮助提高节点关系分析效率",
+  "description": "一个功能丰富的动态社交关系图，知识图谱图,帮助快速理清各种关系，开箱即用，基于配置，功能强大",
   "main": "index.js",
   "module": "dist/relation.esm-bundler.js",
   "types": "dist/relation.d.ts",
@@ -14,7 +14,9 @@
   "keywords": [
     "relation",
     "library",
-    "map"
+    "map",
+    "socialize",
+    "social connections"
   ],
   "author": "doubleming",
   "repository": {
